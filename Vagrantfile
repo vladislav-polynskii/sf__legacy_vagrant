@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.define "postgresql" do |postgresql|
      postgresql.vm.box = "ubuntu/bionic64"
-	 postgresql.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1", auto_correct: true
+     postgresql.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1", auto_correct: true
      postgresql.vm.provision "shell", inline: <<-SHELL
          apt-get update
          apt-get install wget ca-certificates -y
